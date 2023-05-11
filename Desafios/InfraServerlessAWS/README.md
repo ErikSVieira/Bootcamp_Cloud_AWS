@@ -77,7 +77,31 @@
 
 - Criar rota "fetchItems" no "functions" em "serverless.yml":
 
+        fetchItems:
+          handler: src/fetchItems.handler
+          events:
+            - httpApi:
+              path: /items/{id}
+              method: get
+
 - Criado a função "fetchItem.js" e o configurado.
 
 - Criar rota "fetchItem" no "functions" em "serverless.yml":
 
+        fetchItem:
+          handler: src/fetchItem.handler
+          events:
+            - httpApi:
+              path: /items/{id}
+              method: get
+
+- Criado a função "updateItem.js" e o configurado.
+
+- Criar rota "updateItem" no "functions" em "serverless.yml":
+
+        updateItem:
+          handler: src/updateItem.handler
+          events:
+            - httpApi:
+              path: /items/{id}
+              method: put
